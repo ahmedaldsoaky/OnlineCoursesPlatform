@@ -21,7 +21,7 @@ A full-featured **Online Learning Platform** that simulates a real-world system 
 * 👨‍🏫 Instructors create and manage courses
 * 🛡 Admins control and moderate the platform
 
-> Built with **clean architecture**, **real business logic**, and **scalable design**.
+> Built with **real business logic**, and **scalable design**.
 
 ---
 
