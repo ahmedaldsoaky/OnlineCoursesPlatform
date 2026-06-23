@@ -1,282 +1,383 @@
 # 🎓 Online Courses Platform
 
 <p align="center">
-  <b>A Production-Ready Learning Management System (LMS) built with ASP.NET MVC</b>
+  <b>A Learning Management System (LMS) built with ASP.NET Core MVC</b>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/.NET-ASP.NET%20Core-blue?style=for-the-badge&logo=dotnet" />
-  <img src="https://img.shields.io/badge/Architecture-MVC-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/ORM-Entity%20Framework-purple?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Architecture-Layered-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ORM-Entity%20Framework%20Core-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Database-SQL%20Server-red?style=for-the-badge" />
 </p>
 
 ---
 
-## 🚀 Overview
+# 🚀 Overview
 
-A full-featured **Online Learning Platform** that simulates a real-world system where:
+Online Courses Platform is a Learning Management System (LMS) developed using ASP.NET Core MVC. The platform provides a complete learning environment where students can enroll in courses, instructors can create and manage educational content, and administrators can oversee and moderate the platform.
 
-* 🎓 Students enroll and learn
-* 👨‍🏫 Instructors create and manage courses
-* 🛡 Admins control and moderate the platform
-
-> Built with **real business logic**, and **scalable design**.
+The project was built to simulate a real-world online learning system while applying modern backend development practices and scalable application architecture.
 
 ---
 
-## 🖥️ User Interface Preview
+# 👥 User Roles
 
-### 🏠 Home Page
+## 🎓 Student
 
-<p align="center">
-  <img src="./screenshots/Home.jpeg" width="85%" />
-</p>
+* Browse available courses
+* Search and filter courses
+* Enroll in courses
+* Track learning progress
+* Complete lessons and quizzes
+* Continue learning from the last completed lesson
+* Submit course reviews and ratings
 
----
+## 👨‍🏫 Instructor
 
-### 📚 Courses Listing
+* Create and manage courses
+* Upload course thumbnails
+* Organize courses into sections and lessons
+* Add educational content
+* Track instructor statistics
+* Manage personal course catalog
 
-<p align="center">
-  <img src="./screenshots/courses.jpeg" width="85%" />
-</p>
+## 🛡️ Admin
 
----
-
-### 📖 Course Details
-
-<p align="center">
-  <img src="./screenshots/course-details.jpeg" width="85%" />
-</p>
-
----
-
-### 🎓 Enrollment Flow
-
-<p align="center">
-  <img src="./screenshots/enrollment.jpeg" width="85%" />
-</p>
+* Manage users and roles
+* Approve or reject submitted courses
+* Manage categories
+* Manage tags
+* Manage currencies
+* Monitor platform activities
 
 ---
 
-### 🎥 Learning Experience
+# ✨ Key Features
 
-<p align="center">
-  <img src="./screenshots/learning.jpeg" width="85%" />
-</p>
+## 🔐 Authentication & Authorization
 
----
-
-### 👨‍🏫 Instructor Dashboard
-
-<p align="center">
-  <img src="./screenshots/instructor-dashboard.jpeg" width="85%" />
-</p>
+* ASP.NET Identity integration
+* Registration and login system
+* Role-Based Authorization
+* Protected resources and actions
+* User profile management
+* Password reset functionality
+* Change password support
 
 ---
 
-### 🛡 Admin Dashboard
+## 📚 Course Management
 
-<p align="center">
-  <img src="./screenshots/admin-dashboard.jpeg" width="85%" />
-</p>
-
----
-
-## 🎯 Key Features
-
-### 👥 Role-Based System
-
-* **Student** → enroll, learn, track progress, take quizzes
-* **Instructor** → create courses, upload content, manage lessons
-* **Admin** → manage users, approve courses, control system
-
----
-
-### 📚 Course Management
-
-* Create & edit courses
+* Create courses
+* Edit courses
+* Delete courses
 * Upload course images
-* Organize into **Sections & Lessons**
-* Workflow:
+* Assign categories and tags
+* Set course pricing and currencies
 
-  * `Pending → Approved → Rejected`
+### Course Workflow
 
----
+```text
+Pending
+   ↓
+Approved
+   ↓
+Rejected
+```
 
-### 🎥 Lesson System
-
-Supports multiple content types:
-
-* 🔗 Video (URL-based)
-* 📄 Article (file upload)
-* 📕 PDF documents
-* 🧠 Quiz system
-
----
-
-### 📈 Learning Experience
-
-* Track progress percentage
-* Mark lessons as completed
-* Continue learning feature
-* Access control (must be enrolled)
+Courses must be reviewed and approved by administrators before becoming publicly available.
 
 ---
 
-### 🧠 Quiz Engine
+## 🎥 Learning Content System
 
-* Multiple question types
-* Validation & feedback
-* Integrated with progress tracking
+Each course is structured as:
 
----
+```text
+Course
+ └── Sections
+      └── Lessons
+```
 
-### 🔐 Authentication & Security
+Supported lesson types:
 
-* ASP.NET Identity
-* Role-based authorization
-* Secure endpoints
-
----
-
-### 📊 Dashboards
-
-* Instructor stats (students, revenue, courses)
-* Admin dashboard (analytics & control panel)
+* Video Lessons
+* Article Lessons
+* PDF Resources
+* Quiz Lessons
 
 ---
 
-## 🏗 Architecture
+## 📝 Quiz Engine
 
-Built using **Clean Layered Architecture**:
+The platform includes an integrated quiz system:
 
-* MVC (Model - View - Controller)
-* Services Layer (Business Logic)
+* Multiple Choice Questions
+* True / False Questions
+* Answer Validation
+* Progress Integration
+
+---
+
+## 📈 Learning Progress Tracking
+
+Students can:
+
+* Track completed lessons
+* View course completion percentage
+* Continue learning from the next lesson
+* Monitor learning progress through dashboards
+
+---
+
+## ⭐ Reviews & Ratings
+
+Students can:
+
+* Rate courses
+* Write reviews
+* Update existing reviews
+
+The platform automatically calculates:
+
+* Average rating
+* Total review count
+
+---
+
+## 🔍 Search & Filtering
+
+Courses can be filtered using:
+
+* Search keywords
+* Categories
+* Tags
+
+Additional features:
+
+* Pagination
+* Dynamic filtering
+* Course discovery
+
+---
+
+# 🏗 Architecture
+
+The project follows a layered architecture that separates concerns and improves maintainability.
+
+```text
+Presentation Layer
+├── Controllers
+├── Views
+└── ViewModels
+
+Business Layer
+├── Services
+├── DTOs
+└── AutoMapper Profiles
+
+Data Access Layer
+├── Repositories
+├── Entity Framework Core
+└── SQL Server
+
+Infrastructure Layer
+├── ASP.NET Identity
+├── File Storage
+└── Content Management
+
+Domain Layer
+└── Models
+```
+
+---
+
+# 🛠 Design Patterns & Practices
+
 * Repository Pattern
-* DTOs & ViewModels
+* Service Layer Pattern
+* DTO Pattern
+* Dependency Injection
+* AutoMapper
+* Role-Based Authorization
 * Entity Framework Core
+* Separation of Concerns
 
 ---
 
-## ⚙️ Tech Stack
+# ⚙️ Tech Stack
+
+## Backend
 
 * ASP.NET Core MVC
 * Entity Framework Core
+* ASP.NET Identity
 * SQL Server
 * AutoMapper
-* ASP.NET Identity
+
+## Frontend
+
+* Razor Views
 * Bootstrap
-* JavaScript / AJAX
+* JavaScript
+* AJAX
+
+## Development Tools
+
+* Visual Studio
+* Git
+* GitHub
 
 ---
 
-## 📂 Project Structure
+# 🗄 Database Design
 
-```bash
-📦 OnlineCoursesPlatform
- ┣ 📂 Controllers
- ┣ 📂 Services
- ┣ 📂 Repositories
- ┣ 📂 Models
- ┣ 📂 ViewModels
- ┣ 📂 Dtos
- ┣ 📂 Data
- ┣ 📂 Views
- ┗ 📂 wwwroot
+### Core Entities
+
+```text
+User
+AdminProfile
+
+Course
+Category
+Tag
+CourseTag
+
+Section
+Lesson
+
+Enrollment
+UserProgress
+
+Review
+
+Currency
+```
+
+Entity relationships are managed using Entity Framework Core and SQL Server.
+
+---
+
+# 📂 Project Structure
+
+```text
+OnlineCoursesPlatform
+│
+├── Controllers
+├── Data
+├── Dtos
+├── Infrastructure
+├── Mappings
+├── Models
+├── Repositories
+│   ├── Interfaces
+│   ├── Repository.cs
+│   └── CourseRepository.cs
+│
+├── Services
+│   ├── Interfaces
+│   ├── AccountService.cs
+│   ├── AdminService.cs
+│   ├── CourseService.cs
+│   ├── EnrollmentService.cs
+│   ├── InstructorService.cs
+│   ├── LearningService.cs
+│   └── LessonService.cs
+│
+├── ViewModels
+├── Views
+├── wwwroot
+└── Migrations
 ```
 
 ---
 
-## 🔥 What Makes This Project Stand Out?
+# 🔥 Highlights
 
-* Real-world **business logic (NOT CRUD)**
-* Advanced **role-based system**
-* Dynamic **lesson content system**
-* Scalable architecture
-* Clean code structure
-
----
-
-## ⚠️ Challenges & Solutions
-
-| Challenge             | Solution                         |
-| --------------------- | -------------------------------- |
-| Multiple lesson types | Unified content handling system  |
-| Role management       | ASP.NET Identity + Authorization |
-| Progress tracking     | Efficient DB updates             |
-| Data consistency      | Controlled service layer         |
+* Multi-role platform (Student, Instructor, Admin)
+* Course approval workflow
+* Enrollment system
+* Learning progress tracking
+* Quiz-based learning experience
+* Reviews and ratings system
+* File upload support
+* Search, filtering, and pagination
+* Layered architecture
+* ASP.NET Identity integration
+* Repository & Service patterns
 
 ---
 
-## 🚧 Future Improvements
+# 📸 Screenshots
 
-* 💳 Payment integration
-* 📺 Live sessions
-* 📜 Certificates
-* 📱 Mobile optimization
+## Home Page
 
----
+<p align="center">
+  <img src="./screenshots/Home.jpeg" width="85%">
+</p>
 
-## 👨‍💻 Team
+## Courses Listing
 
-<div align="center">
+<p align="center">
+  <img src="./screenshots/courses.jpeg" width="85%">
+</p>
 
-<table>
-<tr>
+## Course Details
 
-<td align="center" width="200px">
-<a href="https://github.com/ahmedaldsoaky">
-<img src="https://github.com/ahmedaldsoaky.png" width="100px;" style="border-radius:50%;" />
-<br />
-<sub><b>Ahmed Aldsoaky</b></sub>
-</a>
-<br />
-<sub>.NET Backend Engineer</sub>
-</td>
+<p align="center">
+  <img src="./screenshots/course-details.jpeg" width="85%">
+</p>
 
-<td align="center" width="200px">
-<a href="https://github.com/amralsaftawi">
-<img src="https://github.com/amralsaftawi.png" width="100px;" style="border-radius:50%;" />
-<br />
-<sub><b>Amr Alsaftawi</b></sub>
-</a>
-<br />
-<sub>.NET Backend Engineer</sub>
-</td>
+## Enrollment Flow
 
-<td align="center" width="200px">
-<a href="https://github.com/MohamedElsheikh17">
-<img src="https://github.com/MohamedElsheikh17.png" width="100px;" style="border-radius:50%;" />
-<br />
-<sub><b>Mohamed Elsheikh</b></sub>
-</a>
-<br />
-<sub>.NET Backend Engineer</sub>
-</td>
+<p align="center">
+  <img src="./screenshots/enrollment.jpeg" width="85%">
+</p>
 
-</tr>
-</table>
+## Learning Experience
 
-</div>
+<p align="center">
+  <img src="./screenshots/learning.jpeg" width="85%">
+</p>
+
+## Instructor Dashboard
+
+<p align="center">
+  <img src="./screenshots/instructor-dashboard.jpeg" width="85%">
+</p>
+
+## Admin Dashboard
+
+<p align="center">
+  <img src="./screenshots/admin-dashboard.jpeg" width="85%">
+</p>
 
 ---
 
-## 📌 Getting Started
+# 👨‍💻 Team
 
-### 1️⃣ Clone the repository
+* Ahmed Aldsoaky
+* Amr Alsaftawi
+* Mohamed Elsheikh
+
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
 
 ```bash
-git clone https://github.com/amralsaftawi/OnlinCoursesPlatform
+git clone https://github.com/amralsaftawi/OnlinCoursesPlatform.git
 ```
 
-### 2️⃣ Update Database
+## Apply Migrations
 
 ```bash
 Update-Database
 ```
 
-### 3️⃣ Run the project
+## Run Application
 
 ```bash
 dotnet run
@@ -284,14 +385,22 @@ dotnet run
 
 ---
 
-## 💡 Final Note
+# 📌 Educational Purpose
 
-This project demonstrates:
+This project was developed as a team-based academic project to simulate a real-world Learning Management System using ASP.NET Core MVC and modern backend development practices.
 
-* Real-world backend engineering
-* System design thinking
-* Scalable architecture principles
+It demonstrates:
 
-🚀 Built to reflect production-level development, not just academic work.
+* Layered Architecture
+* Authentication & Authorization
+* Entity Framework Core
+* Repository Pattern
+* Service Layer
+* Learning Management Workflows
+* Real-world Business Logic
 
 ---
+
+<p align="center">
+  Built with ❤️ using ASP.NET Core MVC
+</p>
